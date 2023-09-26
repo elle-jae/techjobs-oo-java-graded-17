@@ -72,12 +72,12 @@ public class Job {
             this.setCoreCompetency(new CoreCompetency("Data not available"));
         }
         return System.lineSeparator() +
-                "ID:" + this.getId() + "\n" +
-                "Name:" + this.getName() + "\n" +
-                "Employer:" + this.getEmployer() + "\n" +
-                "Location:" + this.getLocation() + "\n" +
-                "Position Type:" + this.getName() + "\n" +
-                "Core Competency:" + this.getCoreCompetency() + "\n" +
+                "ID: " + this.getId() + "\n" +
+                "Name: " + this.getName() + "\n" +
+                "Employer: " + this.getEmployer() + "\n" +
+                "Location: " + this.getLocation() + "\n" +
+                "Position Type: " + this.getPositionType() + "\n" +
+                "Core Competency: " + this.getCoreCompetency() +
                 System.lineSeparator();
     }
 
