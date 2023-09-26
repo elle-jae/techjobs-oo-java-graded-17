@@ -46,6 +46,41 @@ public class Job {
         return Objects.hash(id);
     }
 
+    @Override
+    public String toString() {
+
+        if (this.getName().isEmpty() || this.getName().equals(" ") &&
+                this.getEmployer().getValue().isEmpty() || this.getEmployer().getValue().equals(" ") &&
+                this.getLocation().getValue().isEmpty() || this.getLocation().getValue().equals(" ") &&
+                this.getPositionType().getValue().isEmpty() || this.getPositionType().getValue().equals(" ") &&
+                this.getCoreCompetency().getValue().isEmpty() || this.getCoreCompetency().getValue().equals(" ")) {
+            return "OOPS! This job does not seem to exist.";
+        }
+        if ((this.getName().isEmpty() || this.getName().equals(" "))) {
+            this.setName("Data not available");
+        }
+        if ((this.getEmployer().getValue().isEmpty() || this.getEmployer().getValue().equals(" "))) {
+            this.setEmployer(new Employer("Data not available"));
+        }
+        if ((this.getLocation().getValue().isEmpty() || this.getLocation().getValue().equals(" "))) {
+            this.setLocation(new Location("Data not available"));
+        }
+        if ((this.getPositionType().getValue().isEmpty() || this.getPositionType().getValue().equals(" "))) {
+            this.setPositionType(new PositionType("Data not available"));
+        }
+        if ((this.getCoreCompetency().getValue().isEmpty() || this.getCoreCompetency().getValue().equals(" "))) {
+            this.setCoreCompetency(new CoreCompetency("Data not available"));
+        }
+        return System.lineSeparator() +
+                "ID:" + this.getId() + "\n" +
+                "Name:" + this.getName() + "\n" +
+                "Employer:" + this.getEmployer() + "\n" +
+                "Location:" + this.getLocation() + "\n" +
+                "Position Type:" + this.getName() + "\n" +
+                "Core Competency:" + this.getCoreCompetency() + "\n" +
+                System.lineSeparator();
+    }
+
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
