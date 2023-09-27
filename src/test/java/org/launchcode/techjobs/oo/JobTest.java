@@ -50,14 +50,14 @@ assertFalse(job1.getId() == job2.getId());
     public void testToStringStartsAndEndsWithNewLine() {
         Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 String msg = "check for line break before and after job info";
-String expected = System.lineSeparator() +
-        "ID:  _______\n" +
-        "Name: _______\n" +
-        "Employer: _______\n" +
-        "Location: _______\n" +
-        "Position Type: _______\n" +
-        "Core Competency: _______\n" +
-        System.lineSeparator();
+        String expected = System.lineSeparator() +
+                "ID: " + job.getId() + "\n" +
+                "Name: " + job.getName() + "\n" +
+                "Employer: " + job.getEmployer() + "\n" +
+                "Location: " + job.getLocation() + "\n" +
+                "Position Type: " + job.getPositionType() + "\n" +
+                "Core Competency: " +  job.getCoreCompetency() +
+                System.lineSeparator();
         String actual = job.toString();
         assertEquals(msg, actual, expected);
     }
@@ -67,12 +67,12 @@ String expected = System.lineSeparator() +
         Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 String msg = "toString() includes correct labels and data";
 String expected = System.lineSeparator() +
-        "ID:" + job.getId() + "\n" +
-        "Name:" + job.getName() + "\n" +
-        "Employer:" + job.getEmployer() + "\n" +
-        "Location:" + job.getLocation() + "\n" +
-        "Position Type:" + job.getName() + "\n" +
-        "Core Competency:" +  job.getCoreCompetency() + "\n" +
+        "ID: " + job.getId() + "\n" +
+        "Name: " + job.getName() + "\n" +
+        "Employer: " + job.getEmployer() + "\n" +
+        "Location: " + job.getLocation() + "\n" +
+        "Position Type: " + job.getPositionType() + "\n" +
+        "Core Competency: " +  job.getCoreCompetency() +
         System.lineSeparator();
 String actual = job.toString();
 assertEquals(msg, expected, actual);
