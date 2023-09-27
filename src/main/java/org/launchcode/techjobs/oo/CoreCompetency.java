@@ -32,18 +32,31 @@ public class CoreCompetency extends JobField {
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o) {  // Two objects are equal if they have the same id.
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        CoreCompetency that = (CoreCompetency) o;
-        return Objects.equals(value, that.value);
+        if (!(o instanceof CoreCompetency coreCompetency)) return false;
+        return getId() == coreCompetency.getId();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), value);
+        return Objects.hash(getId());
     }
+
+
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        if (!super.equals(o)) return false;
+//        CoreCompetency that = (CoreCompetency) o;
+//        return Objects.equals(value, that.value);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(super.hashCode(), value);
+//    }
 
     // TODO: Use the "Generate" tool to add a getter and setter for the 'value' field but
     //  ONLY a getter for the 'id' field.
